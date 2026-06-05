@@ -20,14 +20,21 @@ jobs:
       - run: npm run build
 
   test:
-    # needs: build
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6.0.3
+      - run: npm run test
+
+  lint:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6.0.3
       - run: npm run test
 
   deploy:
-    # needs: test
+    needs: [build, lint]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6.0.3
