@@ -1,0 +1,8 @@
+{
+  "name": "advance-ci-demo"
+  "scripts": {
+    "build": "echo Build Succeeded",
+    "test": "echo Test Succeeded",
+    "deploy": "echo Deploy Succeded"
+  }
+}
