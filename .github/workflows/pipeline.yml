@@ -12,6 +12,10 @@ jobs:
       - uses: actions/setup-node@v6.4.0
         with:
           node-version: 20
+      - uses: actions/cache@v5.0.5
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('package.json') }}
       - run: npm install
       - run: npm run build
 
